@@ -28,13 +28,13 @@
                                 <li style="list-style: none">
                                     <span><b>Director:</b>
                                         {% for director in movie.directors.all %}
-                                                {{ director.name }}
+                                            <a href="#">{{ director.name }}</a>
                                         {% endfor %}
                                     </span></li>
                                 <li style="list-style: none">
                                     <span><b>Actor:</b>
-                                        {% for actors in movie.actors.all %}
-                                            {{ actor.name }}
+                                        {% for actor in movie.actors.all %}
+                                           <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
                                         {% endfor %}
                                     </span></li>
                                 <li style="list-style: none">
@@ -47,10 +47,10 @@
                                 <li style="list-style: none"><span><b>Premiere in world:</b> {{ movie.world_premiere }}</span>
                                 </li>
                                 <li style="list-style: none">
-                                    <span><b>Budget:</b>{{ movie.budget }}</span></li>
+                                    <span><b>Budget:</b> ${{ movie.budget }}</span></li>
                                 <li style="list-style: none">
-                                    <span><b>Fees in USA:</b>{{ movie.fees_in_usa }}</span></li>
-                                <li style="list-style: none"><span><b>Fees in world:</b>{{ movie.fees_in_world }}</span>
+                                    <span><b>Fees in USA:</b> ${{ movie.fees_in_usa }}</span></li>
+                                <li style="list-style: none"><span><b>Fees in world:</b> ${{ movie.fees_in_world }}</span>
                                 </li>
                                 <li style="list-style: none">
                                     <a href="#"><b>Rating:</b>

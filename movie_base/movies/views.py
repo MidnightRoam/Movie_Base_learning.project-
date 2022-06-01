@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import DetailView, ListView
 
-from .models import Movie
+from .models import Movie, Actor
 
 
 class MoviesView(ListView):
@@ -12,15 +12,12 @@ class MoviesView(ListView):
 
 
 class MovieDetailView(DetailView):
-    """Full movie description"""
+    """Personal movie page"""
     model = Movie
     slug_field = "url"
 
 
-#
-# class MovieDetailView(View):
-#     """Personal movie page"""
-#
-#     def get(self, request, movie_slug):
-#         movie = Movie.objects.get(url=movie_slug)
-#         return render(request, "movies/movie_detail.html", {"movie": movie})
+class ActorDetailView(DetailView):
+    """Personal actor or director page"""
+    model = Actor
+    slug_field = "url"

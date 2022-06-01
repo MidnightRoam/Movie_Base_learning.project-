@@ -1,3 +1,4 @@
+import uuid
 from datetime import date
 
 from django.db import models
@@ -18,21 +19,6 @@ class MovieCategory(models.Model):
         verbose_name_plural = "Categories"
 
 
-class Actor(models.Model):
-    """Actors and directors"""
-    name = models.CharField("Name", max_length=100)
-    age = models.PositiveSmallIntegerField("Age", default=0)
-    description = models.TextField("Description")
-    image = models.ImageField("Image", upload_to="actors/")
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = "Actors and directors"
-        verbose_name_plural = "Actors and directors"
-
-
 class Genre(models.Model):
     """Genres"""
     name = models.CharField("Name", max_length=100)
@@ -45,6 +31,31 @@ class Genre(models.Model):
     class Meta:
         verbose_name = "Genre"
         verbose_name_plural = "Genres"
+
+
+class Actor(models.Model):
+    """Actors and directors"""
+    name = models.CharField("Name", max_length=100)
+    age = models.PositiveSmallIntegerField("Age", default=0)
+    description = models.TextField("Description", blank=True)
+    short_description = models.CharField("Short description", max_length=350, blank=True)
+    image = models.ImageField("Image", upload_to="actors/", blank=True)
+    career = models.CharField("Career in the film industry", max_length=250, blank=True)
+    height = models.FloatField("Height", blank=True)
+    genres = models.ManyToManyField(Genre, max_length=250, blank=True)
+    born_date = models.DateField("Date of born", default=date.today)
+    url = models.SlugField(max_length=160, unique=True)
+    published = models.BooleanField("Published", default=False)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("actor_detail", kwargs={"slug": self.url})
+
+    class Meta:
+        verbose_name = "Actors and directors"
+        verbose_name_plural = "Actors and directors"
 
 
 class Movie(models.Model):
