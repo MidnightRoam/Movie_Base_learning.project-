@@ -6,7 +6,7 @@ from .models import Movie, Actor
 
 
 class MoviesView(ListView):
-    """List of movies"""
+    """List of published movies"""
     model = Movie
     queryset = Movie.objects.filter(published=True)
 
