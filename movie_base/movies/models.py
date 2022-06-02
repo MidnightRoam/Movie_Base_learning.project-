@@ -89,6 +89,9 @@ class Movie(models.Model):
     def get_absolute_url(self):
         return reverse("movie_detail", kwargs={"slug": self.url})
 
+    def get_review(self):
+        return self.reviews_set.filter(parent__isnull=True)
+
     class Meta:
         verbose_name = "Movie"
         verbose_name_plural = "Movies"
@@ -102,7 +105,7 @@ class MovieShots(models.Model):
     movie = models.ForeignKey(Movie, verbose_name="Movie", on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return f"{self.title} --- {self.movie}"
 
     class Meta:
         verbose_name = "Shot from movie"
