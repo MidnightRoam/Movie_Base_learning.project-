@@ -105,7 +105,7 @@ class MovieShots(models.Model):
     movie = models.ForeignKey(Movie, verbose_name="Movie", on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.title} --- {self.movie}"
+        return self.title
 
     class Meta:
         verbose_name = "Shot from movie"
@@ -149,7 +149,7 @@ class Reviews(models.Model):
     movie = models.ForeignKey(Movie, verbose_name="movie", on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.name} - {self.movie}"
+        return self.name
 
     class Meta:
         verbose_name = "Review"
