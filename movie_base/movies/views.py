@@ -6,7 +6,7 @@ from .models import Movie, Actor, MovieCategory
 from .forms import ReviewForm
 
 
-class MoviesView(ListView):
+class MovieView(ListView):
     """List of published movies"""
     model = Movie
     queryset = Movie.objects.filter(published=True)
