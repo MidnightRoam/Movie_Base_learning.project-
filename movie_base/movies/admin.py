@@ -49,6 +49,7 @@ class MovieAdmin(admin.ModelAdmin):
     inlines = [MovieShotsInLines, ReviewInLines]
     save_on_top = True
     list_editable = ('published',)
+    actions = ["publish", "withdraw_from_publication"]
     form = MovieAdminForm
     readonly_fields = ('get_image',)
     fieldsets = (
@@ -75,6 +76,30 @@ class MovieAdmin(admin.ModelAdmin):
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.poster.url} width="100" height="110"')
+
+    def withdraw_from_publication(self, request, queryset):
+        """Withdraw movie from publication"""
+        row_update = queryset.update(published=False)
+        if row_update == 1:
+            message_bit = "1 post updated"
+        else:
+            message_bit = f"{row_update} posts updated"
+        self.message_user(request, f"{message_bit}")
+
+    def publish(self, request, queryset):
+        """Publish movie"""
+        row_update = queryset.update(published=True)
+        if row_update == 1:
+            message_bit = "1 post updated"
+        else:
+            message_bit = f"{row_update} posts updated"
+        self.message_user(request, f"{message_bit}")
+
+    publish.short_description = "Publish"
+    publish.allowed_permissions = ('change', )
+
+    withdraw_from_publication.short_description = "Withdraw from publication"
+    withdraw_from_publication.allowed_permissions = ('change', )
 
     get_image.short_description = "Poster view"
 
