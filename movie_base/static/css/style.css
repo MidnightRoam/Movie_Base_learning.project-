@@ -900,9 +900,9 @@ ul.w3layouts-box-list li {
 .grid-img-right a {
     font-size: 0.9em;
     text-transform: uppercase;
-    font-weight: 600;
+    /* font-weight: 600; */
     text-decoration: none;
-    color: #fff;
+    /* #color: #fff; */
     padding: 0;
 
 }
