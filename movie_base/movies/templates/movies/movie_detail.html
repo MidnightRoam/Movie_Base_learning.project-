@@ -37,37 +37,37 @@
                                            <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
                                         {% endfor %}
                                     </span></li>
-                                <li style="list-style: none">
+                                <li>
                                     <span><b>Genre:</b>
                                         {% for genre in movie.genres.all %}
                                             {{ genre.name }}
                                         {% endfor %}
                                     </span>
                                 </li>
-                                <li style="list-style: none"><span><b>Premiere in world:</b> {{ movie.world_premiere }}</span>
+                                <li><span><b>Premiere in world:</b> {{ movie.world_premiere }}</span>
                                 </li>
-                                <li style="list-style: none">
+                                <li>
                                     <span><b>Budget:</b> ${{ movie.budget }}</span></li>
-                                <li style="list-style: none">
+                                <li>
                                     <span><b>Fees in USA:</b> ${{ movie.fees_in_usa }}</span></li>
-                                <li style="list-style: none"><span><b>Fees in world:</b> ${{ movie.fees_in_world }}</span>
+                                <li><span><b>Fees in world:</b> ${{ movie.fees_in_world }}</span>
                                 </li>
-                                <li style="list-style: none">
-                                    <a href="#"><b>Rating:</b>
-                                    <span class="fa fa-star" aria-hidden="true"
-                                          style="outline: none; cursor: inherit;"></span>
-                                        <span class="fa fa-star" aria-hidden="true"
-                                              style="outline: none; cursor: inherit;"></span>
-                                        <span class="fa fa-star" aria-hidden="true"
-                                              style="outline: none; cursor: inherit;"></span>
-                                        <span class="fa fa-star" aria-hidden="true"
-                                              style="outline: none; cursor: inherit;"></span>
-                                        <span class="fa fa-star" aria-hidden="true"
-                                              style="outline: none; cursor: inherit;"></span>
-                                        <span class="editContent"
-                                              style="outline: none; cursor: inherit;">5.0</span>
-                                    </a>
+                                <li>
+                                    <form action="#" method="post" name="rating">
+                                        <b>Rating:</b>
+                                        {% csrf_token %}
+                                        <input type="hidden" value="{{ movie.id }}" name="movie">
+                                        <span class="rating">
+                                            {% for k, v in star_form.fields.star.choices %}
+                                                <input id="rating{{ v }}" type="radio" name="star"
+                                                       value="{{ k }}">
+                                                <label for="rating{{ v }}">{{ k }}</label>
+                                            {% endfor %}
+                                        </span>
+                                        <span class="editContent">5.0</span>
+                                    </form>
                                 </li>
+                            </ul>
                                 <div class="share-desc">
                                     <div class="share">
                                         <h4 class="editContent"
