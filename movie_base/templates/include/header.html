@@ -26,10 +26,24 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="contact.html"
+                    {% if user.is_authenticated %}
+                    <span style="color: rgb(255, 255, 255)">
+                        {{ user.username }}
+                    </span>
+                    <a href="{% url 'account_logout' %}"
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                        {% trans 'Logout' %}
+                    </a>
+                    {% else %}
+                    <a href="{% url 'account_login' %}"
                        style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
                         {% trans 'Sign up' %}
                     </a>
+                    <a href="{% url 'account_signup' %}"
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                       {% trans 'Registration' %}
+                    </a>
+                    {% endif %}
                 </li>
 
                 <li>

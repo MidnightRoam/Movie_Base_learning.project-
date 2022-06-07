@@ -45,7 +45,13 @@ INSTALLED_APPS = [
     'contact',
     'ckeditor',
     'ckeditor_uploader',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -90,6 +96,19 @@ DATABASES = {
     }
 }
 
+# django-allauth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+# django-allauth ends
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -124,6 +143,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+# django-translation
 gettext = lambda s: s
 LANGUAGES = (
     ('ru', gettext('Russian')),
@@ -218,4 +238,3 @@ CKEDITOR_CONFIGS = {
     }
 }
 
-SITE_ID = 1
