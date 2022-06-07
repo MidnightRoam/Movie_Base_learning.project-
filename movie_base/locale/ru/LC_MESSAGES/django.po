@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-07 14:39+0300\n"
+"POT-Creation-Date: 2022-06-07 17:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,281 @@ msgstr ""
 "10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
 "100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\movies\templates\contact\tags\form.html:2
+#: .\templates\account\account_inactive.html:5
+#: .\templates\account\account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Аккаунт неактивен"
+
+#: .\templates\account\account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Этот аккаунт неактивен"
+
+#: .\templates\account\email.html:5 .\templates\account\email.html:8
+msgid "E-mail Addresses"
+msgstr "E-mail адрес"
+
+#: .\templates\account\email.html:10
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Следующие адреса электронной почты связаны с вашей учетной записью:"
+
+#: .\templates\account\email.html:24
+msgid "Verified"
+msgstr "Проверено"
+
+#: .\templates\account\email.html:26
+msgid "Unverified"
+msgstr "Непроверенно"
+
+#: .\templates\account\email.html:28
+msgid "Primary"
+msgstr "Основной"
+
+#: .\templates\account\email.html:34
+msgid "Make Primary"
+msgstr "Сделать основным"
+
+#: .\templates\account\email.html:35
+msgid "Re-send Verification"
+msgstr "Повторная отправка подтверждения"
+
+#: .\templates\account\email.html:36
+msgid "Remove"
+msgstr "Удалить"
+
+#: .\templates\account\email.html:43
+msgid "Warning:"
+msgstr "Осторожно:"
+
+#: .\templates\account\email.html:43
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"В настоящее время у вас нет настроенного адреса электронной почты. Вам действительно следует добавить"
+"адрес электронной почты, чтобы вы могли получать уведомления, сбросить пароль и т.д."
+
+#: .\templates\account\email.html:48
+msgid "Add E-mail Address"
+msgstr "Добавить E-mail адрес"
+
+#: .\templates\account\email.html:53
+msgid "Add E-mail"
+msgstr "Добавить E-mail"
+
+#: .\templates\account\email.html:63
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "Вы действительно хотите удалить выбранный адрес электронной почты?"
+
+#: .\templates\account\email_confirm.html:6
+#: .\templates\account\email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Подтвердите E-mail адрес"
+
+#: .\templates\account\email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Пожалуйста, подтвердите, что <a href=\"mailto:%(email)s\">%(email)s</a> - это электронное письмо "
+"адрес для пользователя %(user_display)s."
+
+#: .\templates\account\email_confirm.html:20
+msgid "Confirm"
+msgstr "Подтверждение"
+
+#: .\templates\account\email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href=\"%"
+"(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: .\templates\account\login.html:6 .\templates\account\login.html:10
+#: .\templates\account\login.html:43
+#, fuzzy
+#| msgid "Sign up"
+msgid "Sign In"
+msgstr "Зарегестрироваться"
+
+#: .\templates\account\login.html:15
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: .\templates\account\login.html:25
+msgid "or"
+msgstr "или"
+
+#: .\templates\account\login.html:32
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: .\templates\account\login.html:42
+#: .\templates\account\password_change.html:14
+msgid "Forgot Password?"
+msgstr "Забыли пароль?"
+
+#: .\templates\account\logout.html:5 .\templates\account\logout.html:8
+#: .\templates\account\logout.html:17
+#, fuzzy
+#| msgid "Sign up"
+msgid "Sign Out"
+msgstr "Зарегестрироваться"
+
+#: .\templates\account\logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "Вы уверены, что хотите выйти из системы?"
+
+#: .\templates\account\password_change.html:5
+#: .\templates\account\password_change.html:8
+#: .\templates\account\password_change.html:13
+#: .\templates\account\password_reset_from_key.html:4
+#: .\templates\account\password_reset_from_key.html:7
+#: .\templates\account\password_reset_from_key_done.html:4
+#: .\templates\account\password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr "Поменять пароль"
+
+#: .\templates\account\password_reset.html:6
+#: .\templates\account\password_reset.html:10
+#: .\templates\account\password_reset_done.html:6
+#: .\templates\account\password_reset_done.html:9
+msgid "Password Reset"
+msgstr "Сброс пароля"
+
+#: .\templates\account\password_reset.html:15
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: .\templates\account\password_reset.html:20
+msgid "Reset My Password"
+msgstr "Сбросить мой пароль"
+
+#: .\templates\account\password_reset.html:23
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: .\templates\account\password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. If you have not received it please check your "
+"spam folder. Otherwise contact us if you do not receive it in a few minutes."
+msgstr ""
+
+#: .\templates\account\password_reset_from_key.html:7
+msgid "Bad Token"
+msgstr ""
+
+#: .\templates\account\password_reset_from_key.html:11
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: .\templates\account\password_reset_from_key.html:16
+msgid "change password"
+msgstr ""
+
+#: .\templates\account\password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr ""
+
+#: .\templates\account\password_set.html:5
+#: .\templates\account\password_set.html:8
+#: .\templates\account\password_set.html:13
+msgid "Set Password"
+msgstr ""
+
+#: .\templates\account\signup.html:6
+#, fuzzy
+#| msgid "Sign up"
+msgid "Signup"
+msgstr "Зарегестрироваться"
+
+#: .\templates\account\signup.html:9 .\templates\account\signup.html:19
+#, fuzzy
+#| msgid "Sign up"
+msgid "Sign Up"
+msgstr "Зарегестрироваться"
+
+#: .\templates\account\signup.html:11
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: .\templates\account\signup_closed.html:5
+#: .\templates\account\signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: .\templates\account\signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: .\templates\account\snippets\already_logged_in.html:5
+msgid "Note"
+msgstr ""
+
+#: .\templates\account\snippets\already_logged_in.html:5
+#, python-format
+msgid "you are already logged in as %(user_display)s."
+msgstr ""
+
+#: .\templates\account\verification_sent.html:5
+#: .\templates\account\verification_sent.html:8
+#: .\templates\account\verified_email_required.html:5
+#: .\templates\account\verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: .\templates\account\verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. If you do not see the verification e-mail in "
+"your main inbox, check your spam folder. Please contact us if you do not "
+"receive the verification e-mail within a few minutes."
+msgstr ""
+
+#: .\templates\account\verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: .\templates\account\verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside that e-mail. If you do not see "
+"the verification e-mail in your main inbox, check your spam folder. "
+"Otherwise\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: .\templates\account\verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: .\templates\contact\tags\form.html:2
 msgid "Newsletter"
 msgstr "Новостная рассылка"
 
-#: .\movies\templates\contact\tags\form.html:4
+#: .\templates\contact\tags\form.html:4
 msgid ""
 "By subscribing to our mailing list you will always get latest news and "
 "updates from us."
@@ -31,160 +301,163 @@ msgstr ""
 "Подписавшись на нашу рассылку, вы всегда будете получать последние новости и "
 "обновления от нас."
 
-#: .\movies\templates\include\footer.html:14
+#: .\templates\include\footer.html:14
 msgid ""
 "A convenient service for searching, rating your favorite movies, as well as "
 "communication."
 msgstr "Удобный сервис для поиска, оценки любимых фильмов, а также общения."
 
-#: .\movies\templates\include\footer.html:16
+#: .\templates\include\footer.html:16
 msgid "Catch on Social"
 msgstr "Наши социальные сети"
 
-#: .\movies\templates\include\footer.html:46
+#: .\templates\include\footer.html:46
 msgid "Sections"
 msgstr "Разделы"
 
-#: .\movies\templates\include\footer.html:49
+#: .\templates\include\footer.html:49
 msgid "Home page"
 msgstr "Домой"
 
-#: .\movies\templates\include\footer.html:52
-#: .\movies\templates\include\header.html:18
-#: .\movies\templates\include\header.html:19
+#: .\templates\include\footer.html:52 .\templates\include\header.html:18
+#: .\templates\include\header.html:19
 msgid "Categories"
 msgstr "Категории"
 
-#: .\movies\templates\include\footer.html:55
+#: .\templates\include\footer.html:55
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\movies\templates\include\footer.html:62
+#: .\templates\include\footer.html:62
 msgid "Pages"
 msgstr "Страницы"
 
-#: .\movies\templates\include\footer.html:66
-#: .\movies\templates\include\footer.html:69
-#: .\movies\templates\include\footer.html:72
-#: .\movies\templates\include\footer.html:75
-#: .\movies\templates\include\footer.html:78
+#: .\templates\include\footer.html:66 .\templates\include\footer.html:69
+#: .\templates\include\footer.html:72 .\templates\include\footer.html:75
+#: .\templates\include\footer.html:78
 msgid "About Us"
 msgstr "О нас"
 
-#: .\movies\templates\include\footer.html:85
+#: .\templates\include\footer.html:85
 msgid "Contact Info"
 msgstr "Контактная информация"
 
-#: .\movies\templates\include\footer.html:92
+#: .\templates\include\footer.html:92
 msgid "Location"
 msgstr "Расположение"
 
-#: .\movies\templates\include\header.html:12
+#: .\templates\include\header.html:12
 msgid "Menu"
 msgstr "Меню"
 
-#: .\movies\templates\include\header.html:15
+#: .\templates\include\header.html:15
 msgid "Home"
 msgstr "Домой"
 
-#: .\movies\templates\include\header.html:31
+#: .\templates\include\header.html:35
+msgid "Logout"
+msgstr ""
+
+#: .\templates\include\header.html:40
 msgid "Sign up"
 msgstr "Зарегестрироваться"
 
-#: .\movies\templates\include\header.html:60
+#: .\templates\include\header.html:44
+msgid "Registration"
+msgstr ""
+
+#: .\templates\include\header.html:74
 msgid "Find your favorite movie"
 msgstr "Найди свой любимый фильм"
 
-#: .\movies\templates\include\header.html:61
+#: .\templates\include\header.html:75
 msgid "All about movies"
 msgstr "Всё про фильмы"
 
-#: .\movies\templates\include\sidebar.html:4
+#: .\templates\include\sidebar.html:4
 msgid "Movie search"
 msgstr "Поиск фильма"
 
-#: .\movies\templates\include\sidebar.html:14
+#: .\templates\include\sidebar.html:14
 msgid "Genres"
 msgstr "Жанры"
 
-#: .\movies\templates\include\sidebar.html:27
-#: .\movies\templates\movies\movie_detail.html:23
+#: .\templates\include\sidebar.html:27 .\templates\movies\movie_detail.html:23
 msgid "Year"
 msgstr "Год"
 
-#: .\movies\templates\include\sidebar.html:37
+#: .\templates\include\sidebar.html:37
 msgid "Find"
 msgstr "Найти"
 
-#: .\movies\templates\include\sidebar.html:43
-#: .\movies\templates\movies\movie_detail.html:57
+#: .\templates\include\sidebar.html:43 .\templates\movies\movie_detail.html:57
 msgid "Rating"
 msgstr "Рейтинг"
 
-#: .\movies\templates\movies\movie_detail.html:24
+#: .\templates\movies\movie_detail.html:24
 msgid "Country"
 msgstr "Страна"
 
-#: .\movies\templates\movies\movie_detail.html:26
+#: .\templates\movies\movie_detail.html:26
 msgid "Tagline"
 msgstr "Слоган"
 
-#: .\movies\templates\movies\movie_detail.html:29
+#: .\templates\movies\movie_detail.html:29
 msgid "Director"
 msgstr "Режиссер"
 
-#: .\movies\templates\movies\movie_detail.html:35
+#: .\templates\movies\movie_detail.html:35
 msgid "Actor"
 msgstr "Актер"
 
-#: .\movies\templates\movies\movie_detail.html:41
+#: .\templates\movies\movie_detail.html:41
 msgid "Genre"
 msgstr "Жанр"
 
-#: .\movies\templates\movies\movie_detail.html:47
+#: .\templates\movies\movie_detail.html:47
 msgid "Premiere in world"
 msgstr "Премьера в мире"
 
-#: .\movies\templates\movies\movie_detail.html:50
+#: .\templates\movies\movie_detail.html:50
 msgid "Budget"
 msgstr "Бюджет"
 
-#: .\movies\templates\movies\movie_detail.html:52
+#: .\templates\movies\movie_detail.html:52
 msgid "Fees in USA"
 msgstr "Сборы в США"
 
-#: .\movies\templates\movies\movie_detail.html:53
+#: .\templates\movies\movie_detail.html:53
 msgid "Fees in world"
 msgstr "Сборы в мире"
 
-#: .\movies\templates\movies\movie_detail.html:107
+#: .\templates\movies\movie_detail.html:107
 msgid "About movie"
 msgstr "О фильме"
 
-#: .\movies\templates\movies\movie_detail.html:131
+#: .\templates\movies\movie_detail.html:131
 msgid "Comments"
 msgstr "Комментарии"
 
-#: .\movies\templates\movies\movie_detail.html:131
+#: .\templates\movies\movie_detail.html:131
 msgid "Leave feedback"
 msgstr "Оставьте отзыв"
 
-#: .\movies\templates\movies\movie_detail.html:137
+#: .\templates\movies\movie_detail.html:137
 msgid "Your message"
 msgstr "Ваше сообщение"
 
-#: .\movies\templates\movies\movie_detail.html:145
+#: .\templates\movies\movie_detail.html:145
 msgid "Name"
 msgstr "Имя"
 
-#: .\movies\templates\movies\movie_detail.html:158
+#: .\templates\movies\movie_detail.html:158
 msgid "Send"
 msgstr "Отправить"
 
-#: .\movies\templates\movies\movie_detail.html:174
+#: .\templates\movies\movie_detail.html:174
 msgid "Reply"
 msgstr "Ответить"
 
-#: .\movies\templates\movies\tags\latest_added_movies.html:3
+#: .\templates\movies\tags\latest_added_movies.html:3
 msgid "Latest added movies"
 msgstr "Последние добавленные фильмы"
