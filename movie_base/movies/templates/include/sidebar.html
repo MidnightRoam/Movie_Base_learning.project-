@@ -1,7 +1,7 @@
-{% load movie_tag %}
+{% load i18n movie_tag %}
 <div class="search-bar w3layouts-newsletter">
     <h3 class="sear-head editContent">
-        Поиск фильма</h3>
+        {% trans 'Movie search' %}</h3>
     <form action="{% url 'search' %}" method="get" class="d-flex editContent">
         <input type="search" placeholder="Enter the name..." name="q" class="form-control" required="">
         <button type="submit" class="btn1 btn"><span class="fa fa-search" aria-hidden="true"></span>
@@ -11,7 +11,7 @@
     <!--preference -->
 <form action="{% url 'filter' %}" method="get">
     <div class="left-side my-4">
-        <h3 class="sear-head editContent">Genres</h3>
+        <h3 class="sear-head editContent">{% trans 'Genres' %}</h3>
         <ul class="w3layouts-box-list">
             {% for genre in view.get_genres %}
             <li class="editContent">
@@ -24,7 +24,7 @@
 <!-- // preference -->
 <!-- discounts -->
     <div class="left-side">
-        <h3 class="sear-head editContent" >Year</h3>
+        <h3 class="sear-head editContent" >{% trans 'Year' %}</h3>
         <ul class="w3layouts-box-list">
             {% for movie in view.get_years %}
             <li class="editContent">
@@ -34,13 +34,13 @@
             {% endfor %}
         </ul>
     </div>
-    <button type="submit">Find</button>
+    <button type="submit">{% trans 'Find' %}</button>
 </form>
 <!-- //discounts -->
 <!-- reviews -->
 <div class="customer-rev left-side my-4">
     <h3 class="sear-head editContent" style="outline: none; cursor: inherit;">
-        Рейтинг</h3>
+        {% trans 'Rating' %}</h3>
     <ul class="w3layouts-box-list">
         <li>
             <a href="#">

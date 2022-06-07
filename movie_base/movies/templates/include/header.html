@@ -1,4 +1,4 @@
-{% load movie_tag %}
+{% load i18n movie_tag %}
 <header class="header">
     <div class="container-fluid px-lg-5">
         <!-- nav -->
@@ -9,14 +9,14 @@
                 </h1>
             </div>
 
-            <label for="drop" class="toggle">Menu</label>
+            <label for="drop" class="toggle">{% trans 'Menu' %}</label>
             <input type="checkbox" id="drop">
             <ul class="menu mt-2">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="index.html">{% trans 'Home' %}</a></li>
                 <li>
                     <!-- First Tier Drop Down -->
-                    <label for="drop-2" class="toggle">Categories <span class="fa fa-angle-down" aria-hidden="true" ></span> </label>
-                    <a href="#">Categories <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                    <label for="drop-2" class="toggle">{% trans 'Categories' %} <span class="fa fa-angle-down" aria-hidden="true" ></span> </label>
+                    <a href="#">{% trans 'Categories' %} <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                     <input type="checkbox" id="drop-2">
                     <ul>
                         {% get_categories as categories %}
@@ -25,7 +25,30 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <li><a href="contact.html" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Sign up</a></li>
+                <li>
+                    <a href="contact.html"
+                       style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">
+                        {% trans 'Sign up' %}
+                    </a>
+                </li>
+
+                <li>
+                    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                        <input name="text" type="hidden" value="{{ redirect_to }}">
+                        <select name="language">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                                        selected{% endif %}>
+                                    {{ language.name_local }} ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Go">
+                    </form>
+                </li>
             </ul>
         </nav>
         <!-- //nav -->
@@ -34,8 +57,8 @@
 <!-- //header -->
 <!--/banner-->
 <div class="banner-info">
-    <p class="editContent" >Find your favorite movie</p>
-    <h3 class="mb-4 editContent">All about movies</h3>
+    <p class="editContent" >{% trans 'Find your favorite movie' %}</p>
+    <h3 class="mb-4 editContent">{% trans 'All about movies' %}</h3>
     <div class="ban-buttons">
 
 
